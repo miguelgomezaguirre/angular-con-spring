@@ -9,6 +9,8 @@ import { DirectivaComponent } from './directiva/directiva.component';
 import { ClientesComponent } from './clientes/clientes.component';
 
 import { RouterModule, Routes } from '@angular/router';
+import { FormComponent } from './clientes/form.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
    {
@@ -23,6 +25,14 @@ const routes: Routes = [
    {
       path: 'clientes',
       component: ClientesComponent
+   },
+   {
+      path: 'clientes/form',
+      component: FormComponent
+   },
+   {
+      path: 'clientes/form/:id',
+      component: FormComponent
    }
 ];
 
@@ -32,12 +42,14 @@ const routes: Routes = [
       HeaderComponent,
       FooterComponent,
       DirectivaComponent,
-      ClientesComponent
+      ClientesComponent,
+      FormComponent
    ],
    imports: [
       BrowserModule,
       HttpClientModule,
-      RouterModule.forRoot(routes)
+      RouterModule.forRoot(routes),
+      FormsModule
    ],
    providers: [],
    bootstrap: [
